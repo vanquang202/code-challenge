@@ -38,7 +38,6 @@ class CodeManager extends Controller
             if ($extensionFile == "cpp") $type  = "c++";
             $command = "docker run --rm -v $path$forder:$forder $imageBuildDocker $type $forder/main.$extensionFile $forder/a.out $forder/output.txt";
         }
-        // dd($command);
         $content = exec($command); // Exec run file
         return $content;
     }
